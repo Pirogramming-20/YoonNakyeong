@@ -82,7 +82,6 @@
         #wrap-center {
             width: 1280px;
             display: inline-block;
-            background-color: yellow;
         }
         #header{
             text-align: left;
@@ -129,8 +128,9 @@
             padding: 10px 8px;
         }
         #header-naverpay > div {
-            width: 30px;
-            background-position: -296px -179px;
+            width: 32px;
+            height: 32px;
+            background-position: -295px -177px;
         }
         #header-notice{
             right: -10px;
@@ -177,7 +177,8 @@
             </div>
         <style>
             #search > form {
-                display: inline-block;
+                display: inline-flex;
+                align-items: center;
                 width: 708px;
                 height: 60px;
                 border: 1px solid #03c75a;
@@ -201,15 +202,80 @@
                 width: 24px;
                 height: 24px;
             }
+            #search-svg {
+                display: inline-block;
+                width: 68px;
+                margin-right: 12px;
+                height: 100%;
+                padding-left: 10px;
+            }
+            #search-svg svg {
+                width: 14px;
+                height: 14px;
+                fill: #03c75a;
+            }
+            #search-input {
+                width: 480px;
+                padding: 17px 0;
+                font-size: 2rem;
+                line-height: 24px;
+                font-weight: bold;
+                border: none;
+                outline: none;
+            }
+            #search-right {
+                display: inline-block;
+            }
+            #search-keyboard::before {
+                content: "";
+                display: block;
+                background-image: url(https://pm.pstatic.net/resources/asset/sp_main.d5b6c236.png);
+                background-size: 433px 412px;
+                background-position: -254px -254px;
+                background-repeat: no-repeat;
+                width: 24px;
+                height: 14px;
+            }
+            #search-recent::before {
+                content: "";
+                display: block;
+                background-image: url(https://pm.pstatic.net/resources/asset/sp_main.d5b6c236.png);
+                background-size: 433px 412px;
+                background-position: -133px -201px;
+                background-repeat: no-repeat;
+                width: 10px;
+                height: 6px;
+
+            }
+            #search-button::before {
+                content: "";
+                display: block;
+                background-image: url(https://pm.pstatic.net/resources/asset/sp_main.d5b6c236.png);
+                background-size: 433px 412px;
+                background-position: -335px -293px;
+                background-repeat: no-repeat;
+                width: 25px;
+                height: 25px;
+            }
         </style>
             <div id="search">
                 <form action="">
-                    <a href="#">
+                    <a id="search-svg" href="#">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.273 12.845 7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727v12.845z"></path></svg>
                     </a>
                     <label for="search-input" class="blind">검색어 입력</label>
-                    <input id="search-input" type="text" />
-                    <button class="blind">검색</button>
+                    <input id="search-input" type="text" placeholder="검색어를 입력하세요." />
+                    <div id="search-right">
+                        <button href="#" id="search-keyboard">
+                            <span class="blind">입력도구</span>
+                        </button>
+                        <button href="#" id="search-recent">
+                            <span class="blind">자동완성/최근검색어펼치기</span>
+                        </button>
+                        <button id="search-button">
+                            <div><span class="blind">검색</span></div>
+                        </button>
+                    </div>                    
                 </form>
             </div>
             <div id="nav"></div>
