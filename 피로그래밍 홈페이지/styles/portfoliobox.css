@@ -18,11 +18,13 @@
     overflow: hidden;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
-img {
+#applelogo {
+    position: absolute;
     width: min(50%, 200px);
     transition: transform 0.4s;
-    
+    left: 20px;
 }
 @media screen and (min-width:1200px) {
     .sbox {
