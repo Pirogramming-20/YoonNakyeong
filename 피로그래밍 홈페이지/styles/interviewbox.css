@@ -1,0 +1,23 @@
+#bbox {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 10px;
+
+}
+.sbox {
+    height: 200px;
+    width: 480px;
+    background-color: darkgray;
+    border-radius: 10px;
+}
+
+@media screen and (min-width:400px) {
+    #bbox {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media screen and (min-width:800px) {
+    #bbox {
+        grid-template-columns: repeat(3,1fr);
+    }
+}
