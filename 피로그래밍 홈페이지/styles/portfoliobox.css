@@ -23,7 +23,6 @@
 #applelogo {
     position: absolute;
     width: min(50%, 200px);
-    transition: transform 0.4s;
     left: 30px;
 }
 @media screen and (min-width:1400px) {
@@ -33,7 +32,31 @@
 }
 @media screen and (max-width:800px) {
     .sbox {
-        height: 400px;
+        height: 400px;        
+    }
+    #applelogo {
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-bottom: 20px;
+    }
+    .team-name {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: translate(0, 0);
+        text-align: center;
+        margin: 10px 0;
+        text-align: center;
+    }
+    .team-member {
+        left: 50%;
+        position: relative;
+        left: auto;
+        top: auto;
+        justify-content: center;
+        text-align: center;
+        transform: translate(-50%, -50%);
     }
 }
 .sbox:hover {
