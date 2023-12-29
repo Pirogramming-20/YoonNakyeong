@@ -1,0 +1,15 @@
+@media screen and (max-width: 700px) {
+    #sidebar {
+      width: 300px;
+      height: calc(100vh - var(--header-height));
+      background-color: gray;
+      position: fixed;
+      top: var(--header-height);
+      right: -300px;
+      transition: 0.3s;
+    }
+    #hamburger-icon input:checked ~ .sidebar {
+      right: 0;
+    }
+  }
+  
