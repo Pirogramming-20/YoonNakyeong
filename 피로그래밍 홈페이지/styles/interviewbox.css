@@ -1,21 +1,19 @@
 #bbox {
     display: grid;
     grid-template-columns: repeat(1,1fr);
-    grid-gap: 10px;
-
-}
+    grid-gap: 10px;}
 .sbox {
     position: relative;
     height: 200px;
     width: 480px;
-    background-color: darkgray;
+    background-color: rgb(62, 62, 62);
     border-radius: 10px;
     overflow: hidden;
 }
 .sbox:hover {
     transform: translateY(-2px);
 }
-@media screen and (min-width:700px) {
+@media screen and (min-width:480px) {
     #bbox {
         grid-template-columns: repeat(2,1fr);
     }
@@ -33,9 +31,33 @@
     position: absolute;
     width: 100px;
     transition: transform 0.4s;
-    top: 50px;
+    top: 30px;
     left: 20px;
+    border-radius: 50%;
+    overflow: hidden;
 }
 .sbox:hover img {
     transform: scale(1.2); 
+}
+.name {
+    position: absolute;
+    left: 150px;
+    top: 50px;
+    color: white;
+    font-size: 20px;
+}
+.major {
+    position: absolute;
+    left: 150px;
+    top: 80px;
+    background-color: cornflowerblue;
+    border-radius: 3px;
+    padding: 5px 10px;
+    font-size: 20px;
+}
+.message {
+    position: absolute;
+    left: 40px;
+    bottom: 30px;
+    font-size: 20px;
 }
