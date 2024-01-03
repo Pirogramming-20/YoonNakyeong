@@ -27,21 +27,9 @@ const randNum=[randN1,randN2,randN3]; //랜덤 숫자 생성 성공
 console.log(randNum);
 const submitBtn=document.querySelector('.submit-button');
 const resultBox=document.querySelector('.result-display');
-//버튼 비활성화
-n1.addEventListener("input",inputField);
-n2.addEventListener("input",inputField);
-n3.addEventListener("input",inputField);
-function inputField() {
-    if (n1.value!="" && n2.value!="" && n3.value!="") {
-        submitBtn.disabled=false;
-    }
-    else {
-        submitBtn.disabled=true;
-    }
-}
-inputField();
+
 function check_numbers() {
-    if (!isNaN(n1.value) && !isNaN(n2.value) && !isNaN(n3.value)){
+    if (((n1.value!="") && (n2.value!="") && (n3.value!="")) && (!isNaN(n1.value) && !isNaN(n2.value) && !isNaN(n3.value))){
         myNum=[Number(n1.value),Number(n2.value),Number(n3.value)];
         console.log(myNum);
         gameNum-=1;
