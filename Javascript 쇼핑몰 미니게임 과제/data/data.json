@@ -4,57 +4,64 @@
             "type":"shirt", 
             "gender":"female",
             "size":"large",
-            "coclor":"pink",
-            "image":"../i"
-        },
-        {
-            "type":"shirt", 
-            "gender":"female",
-            "size":"large",
-            "coclor":"pink",
+            "color":"pink",
             "image":"../img/pink_t.png"
         },
         {
             "type":"shirt", 
             "gender":"female",
             "size":"large",
-            "coclor":"pink",
+            "color":"pink",
             "image":"../img/pink_t.png"
         },
         {
             "type":"shirt", 
             "gender":"female",
             "size":"large",
-            "coclor":"pink",
+            "color":"pink",
             "image":"../img/pink_t.png"
         },
         {
             "type":"shirt", 
             "gender":"female",
             "size":"large",
-            "coclor":"pink",
+            "color":"pink",
             "image":"../img/pink_t.png"
         },
         {
             "type":"shirt", 
             "gender":"female",
             "size":"large",
-            "coclor":"pink",
+            "color":"pink",
             "image":"../img/pink_t.png"
         },
         {
             "type":"shirt", 
             "gender":"female",
             "size":"large",
-            "coclor":"pink",
+            "color":"pink",
             "image":"../img/pink_t.png"
         },
         {
             "type":"shirt", 
             "gender":"female",
             "size":"large",
-            "coclor":"pink",
+            "color":"pink",
             "image":"../img/pink_t.png"
+        },
+        {
+            "type":"shirt", 
+            "gender":"female",
+            "size":"large",
+            "color":"pink",
+            "image":"../img/pink_t.png"
+        },
+        {
+            "type":"pants", 
+            "gender":"male",
+            "size":"large",
+            "color":"yellow",
+            "image":"../img/yellow_p.png"
         }
 
 

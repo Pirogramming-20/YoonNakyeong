@@ -12,7 +12,7 @@
     --base-space: 8px;
     --font-size: 18px;
     --size-border: 4px;
-    --size-thumnail: 50px;
+    --size-thumbnail: 50px;
 
     /* animation */    
     --animation-duration: 300ms;
@@ -43,7 +43,6 @@ body {
 
 .btn:hover,
 .logo:hover {
-    transition: transform 300ms;
     transform: scale(1.1);
 }
 
@@ -87,9 +86,9 @@ body {
     margin-bottom: var(--base-space);
 }
 
-.item__thumnail {
-    width: var(--size-thumnail);
-    height: var(--size-thumnail);
+.item__thumbnail {
+    width: var(--size-thumbnail);
+    height: var(--size-thumbnail);
 }
 .item__description {
     margin-left: var(--base-space);
