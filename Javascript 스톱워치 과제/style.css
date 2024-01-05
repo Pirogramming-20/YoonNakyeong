@@ -1,0 +1,99 @@
+body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.container {
+    width: 400px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.header {
+    display: flex;
+    justify-content: center;
+}
+#icon1 {
+    width: 30px;
+    height: 30px;
+    background: url('https://api.iconify.design/mdi/stopwatch.svg') no-repeat center center / contain;
+}
+#title {
+    font-size: 28px;
+}
+#watch {
+    background-color: rgb(152, 173, 167);
+    padding: 30px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+#time {
+    display: flex;
+    justify-content: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+    background-color: rgb(226, 216, 203);
+    border-radius: 10px;
+}
+#timeBtn {
+    display: flex;
+    justify-content: space-around;
+}
+.btn {
+    background-color: rgb(226, 216, 203);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#result-top {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(152, 173, 167);
+    padding: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+#result-text {
+    font-size: 20px;
+}
+#delete-btn {
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+#icon2 {
+    background: url('https://api.iconify.design/octicon/trashcan-16.svg') no-repeat center center / contain;
+    width: 20px;
+    height: 20px;
+}
+#icon2:hover {
+    background: url('https://api.iconify.design/octicon/trashcan-16.svg?color=red') no-repeat center center / contain;
+    cursor: pointer;
+}
+#result-bottom > div {
+    padding: 10px;
+}
+.resultbtn {
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-right: 100px;
+    margin-left: 40px;
+}
+#resbox {
+    display: flex;
+}
+#restext {
+    font-size: 20px;
+}
+.resultbtn.checked {
+    background: url('https://api.iconify.design/material-symbols/check.svg') no-repeat center center / contain;
+}
