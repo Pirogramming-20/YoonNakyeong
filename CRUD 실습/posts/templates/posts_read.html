@@ -1,0 +1,30 @@
+<h1>{{ post.title }}</h1>
+<small>작성자: {{ post.user }}</small>
+<br />
+<p>{{ post.content }}</p>
+<br />
+
+<a href="/posts/{{previous_post_id}}"> 이전글로 가기</a>
+<br>
+<a href="/posts/{{next_post_id}}"> 다음글로 가기</a>
+<br>
+<a href="/posts/{{post.id}}/update"> 수정하기 </a>
+
+<form action="/posts/{{post.id}}/delete" method="post">
+    {% csrf_token %}
+    <input type="submit" value="삭제하기">
+  </form>
+
+<h1> 댓글 작성하기 </h1>
+<form action="/posts/{{post.id}}/comments/create" method="post">
+    {% csrf_token %}
+    <textarea name="content" cols="30" rows="2" placeholder="내용"></textarea>
+    <div>
+        <input type="submit" value="작성완료">
+    </div>
+</form>
+
+{% for comment in comments %}
+    {{comment.content}}
+    <br>
+{% endfor %}

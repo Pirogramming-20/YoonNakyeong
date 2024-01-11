@@ -1,0 +1,6 @@
+<h3> 피로 게시판 </h3>
+<a href="/posts/create"> 글 작성하러 가기</a>
+
+{% for post in posts %}
+    <p><a href="/posts/{{post.id}}">{{post.id}}.{{post.title}}</a></p>
+{% endfor %}
