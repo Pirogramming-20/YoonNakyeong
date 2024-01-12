@@ -1,0 +1,16 @@
+<h1><a href="/review">my Moviere views</a></h1>
+
+<h2>{{movie.id}}. {{movie.title}}</h2>
+<p>개봉 년도 : {{movie.year}}</p>
+<p>장르 : {{movie.genre}}</p>
+<p>별점 : {{movie.rating}}</p>
+<p>감독 : {{movie.director}}</p>
+<p>주연 : {{movie.character}}</p>
+<p>러닝타임 : {{movie.time}}분</p>
+<p>내용 : {{movie.story}}</p>
+
+<a href="/review/{{movie.id}}/update">수정</a>
+<form action="/review/{{movie.id}}/delete" method="post">
+    {%csrf_token%}
+    <input type="submit" value="삭제">
+</form>

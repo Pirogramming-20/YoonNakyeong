@@ -1,0 +1,16 @@
+<h1> 리뷰 작성하기 </h1>
+
+<form action="/review/create_final" method="post">
+  {% csrf_token %}
+  <input name="title" placeholder="제목"  /> <br/>
+  <input name="year" placeholder="개봉 년도" /> <br/>
+  <input name="genre" placeholder="장르"  /> <br/>
+  <input name="rating" placeholder="별점"  /> <br/>
+  <input name="director" placeholder="감독"  /> <br/>
+  <input name="character" placeholder="주연"  /> <br/>
+  <input name="time" placeholder="러닝타임"  /> <br/>  
+  <textarea name="story" cols="30" rows="10" placeholder="내용"></textarea>
+  <div>
+    <input type="submit" value="작성완료">
+  </div>
+</form>

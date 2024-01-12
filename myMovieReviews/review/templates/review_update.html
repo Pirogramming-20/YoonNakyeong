@@ -1,0 +1,16 @@
+<h1> 리뷰 수정하기 </h1>
+
+<form action="/review/{{movie.id}}/update" method="post">
+  {% csrf_token %}
+  <input name="title" placeholder="제목" value="{{movie.title}}" /> <br/>
+  <input name="year" placeholder="개봉 년도" value="{{movie.year}}"/> <br/>
+  <input name="genre" placeholder="장르" value="{{movie.genre}}" /> <br/>
+  <input name="rating" placeholder="별점" value="{{movie.rating}}" /> <br/>
+  <input name="director" placeholder="감독" value="{{movie.director}}" /> <br/>
+  <input name="character" placeholder="주연" value="{{movie.character}}" /> <br/>
+  <input name="time" placeholder="러닝타임" value="{{movie.time}}" /> <br/>  
+  <textarea name="story" cols="30" rows="10" placeholder="내용" >{{movie.story}}</textarea>
+  <div>
+    <input type="submit" value="수정완료">
+  </div>
+</form>

@@ -1,0 +1,8 @@
+<h1>my Moviere views</h1>
+<a href="/review/create">리뷰 작성</a>
+{% for movie in review %}
+    <h2>{{movie.id}}. <a href="/review/{{movie.id}}">{{movie.title}}</a></h2>
+    <p>개봉 년도 : {{movie.year}}</p>
+    <p>장르 : {{movie.genre}}</p>
+    <p>별점 : {{movie.rating}}</p>
+{% endfor %}
