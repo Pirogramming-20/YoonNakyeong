@@ -1,0 +1,21 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWIDEA</title>
+</head>
+<body>
+    <div class="navBar">
+        <a href="{% url 'ideas:main' %}">My SW Ideas Manage</a>
+        <a href="{% url 'ideas:create' %}">아이디어 등록</a>
+        <a href="{% url 'ideas:main' %}">아이디어 관리</a>
+        <a href="{% url 'tools:create' %}">개발툴 등록</a>
+        <a href="{% url 'tools:tool' %}">개발툴 관리</a>
+    </div>
+    {%block content%}
+
+    {%endblock%}
+</body>
+</html>

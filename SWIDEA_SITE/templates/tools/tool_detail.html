@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <div>
+    <h1>DevTool Detail</h1>
+    <h3>개발툴 세부내용 페이지 입니다. 자신이 다룰 수 있는 개발툴에 대한 상세내용을 확인해 보세요.</h3>
+      <div>
+        <p>{{ tool.name }}</p>
+        <p>{{ tool.kind }}</p>
+        <p>{{ tool.content }}</p>
+      </div>
+      <form action="{% url 'tools:delete' tool.pk %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="삭제" />
+      </form>    
+      <a href="{% url 'tools:tool' %}">목록</a>
+      <a href="{% url 'tools:update' tool.pk %}">수정</a>
+  </div>
+{% endblock %}

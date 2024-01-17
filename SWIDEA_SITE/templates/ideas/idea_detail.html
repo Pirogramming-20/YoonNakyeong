@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="idea-detail">
+    <h1>Idea Datail</h1>
+    <h3>{{ idea.title }}</h3>
+    {% if idea.image %}
+      <img src="{{ idea.image.url }}" alt="{{ idea.title }}">
+    {% endif %}
+    <p>(1)아이디어 관심도</p>
+    <p>{{ idea.interest }}</p>
+    <p>(2)예상 개발 툴</p>
+    <p>{{ idea.devtool }}</p>
+    <p>(3)아이디어 설명</p>
+    <p>{{ idea.content }}</p>
+    <form action="{% url 'ideas:delete' idea.pk %}" method="post">
+      {% csrf_token %}
+      <input type="submit" value="삭제" />
+    </form>    
+    <a href="{% url 'ideas:main' %}">목록</a>
+    <a href="{% url 'ideas:update' idea.pk %}">수정</a>
+  </div>
+{% endblock %}
