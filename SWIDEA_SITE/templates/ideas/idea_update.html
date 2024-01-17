@@ -2,6 +2,8 @@
 {% load static %}
 
 {% block content %}
+    <h1>Idea Detail Update</h1>
+    <h3>아이디어 세부내용 수정 페이지 입니다. 아이디어를 구체화하거나 내용을 변경해 보아요.</h3>
     <form
         action="{% url 'ideas:update' pk %}"
         method="post"

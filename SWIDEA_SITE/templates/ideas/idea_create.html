@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
+  <h1>Idea Register</h1>
+  <h3>아이디어 등록 페이지 입니다. 당신의 아이디어를 잊지 말고 기록하세요!</h3>
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
