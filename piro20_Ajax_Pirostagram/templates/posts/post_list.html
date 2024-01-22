@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="btn">
+    <a href="{% url 'posts:post_create' %}" >게시글 작성</a>
+</div>
+
+<div class="container">
+    {% for post in posts %}
+    <div class="box">
+        <div class="content">
+            <img src="{{ post.image.url }}" alt="{{ post.title }}" class="photo">
+            <h3 class="title">{{ post.title }}</h3>
+            <p>{{ post.content }}</p>
+            <button class="like-button" data-post-id="{{ post.id }}">♥</button>
+            <span id="like-count-{{ post.id }}">Likes {{ post.like }}</span>
+        </div>
+        
+        <div id="comments-section-{{ post.id }}">
+            {% for comment in post.comments.all %}
+            <p id="comment-{{ comment.id }}">{{ comment.comment }} <button class="delete-comment" data-comment-id="{{ comment.id }}">삭제</button></p>
+            {% endfor %}
+        </div>
+        <form class="comment-form" data-post-id="{{ post.id }}">
+            <textarea name="comment" placeholder="댓글 달기..."></textarea>
+            <input type="hidden" name="post_id" value="{{ post.id }}">
+            <button type="submit">댓글 등록</button>
+        </form>
+    </div>
+    {% endfor %}
+</div>
+
+<script>
+    function send(method, url, data, onSuccess) {
+        const request = new XMLHttpRequest();
+        request.open(method, url, true);
+        request.setRequestHeader(
+            'Content-Type', 
+        'application/x-www-form-urlencoded');
+        request.onload = function () {
+            if (request.status < 400) {
+                onSuccess(request.response);
+            }
+        };
+        request.send(data);
+    }
+
+    const onClickLike = (id, type) => {
+        const data = 'post_id=' + id;
+        const request = new XMLHttpRequest();
+        const url = "{% url 'posts:like_ajax' %}";
+        request.open("POST", url, true);
+        request.setRequestHeader(
+            "Content-Type", 
+            "application/x-www-form-urlencoded");
+        request.send(data);
+
+        request.onreadystatechange = () => {
+            if (request.readyState === XMLHttpRequest.DONE) {
+                if (request.status < 400) {
+                    const response = JSON.parse(request.response);
+                    const element = document.querySelector(`#like-count-${id}`);
+                    if (response.likes !== undefined) {
+                        element.textContent = 'Likes ' + response.likes;
+                    }
+                }
+            }
+        };
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.like-button').forEach(function(button) {
+            button.addEventListener('click', function() {
+                const post_id = this.getAttribute('data-post-id');
+                onClickLike(post_id, 'like');
+            });
+        });
+
+        document.querySelectorAll('.comment-form').forEach(function(form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const post_id = this.getAttribute('data-post-id');
+                const formData = new FormData(this);
+                const data = new URLSearchParams(formData).toString();
+
+                send('POST', "{% url 'posts:comment_ajax' %}", data, function (response) {
+                    response = JSON.parse(response);
+                    const commentContent = response.comment;
+                    const commentId = response.comment_id;
+                    const newCommentHtml = `
+                        <p id="comment-${commentId}">
+                            ${commentContent} 
+                            <button class="delete-comment" data-comment-id="${commentId}">삭제</button>
+                        </p>`;
+                    document.getElementById('comments-section-' + post_id).innerHTML += newCommentHtml;
+                    form.querySelector('textarea[name="comment"]').value = '';
+                });
+            });
+        });
+
+        document.addEventListener('click', function(e) {
+            if(e.target && e.target.classList.contains('delete-comment')) {
+                const commentId = e.target.getAttribute('data-comment-id');
+                const data = 'comment_id=' + commentId;
+
+                send('POST', "{% url 'posts:comment_delete' %}", data, function (response) {
+                    response = JSON.parse(response);
+                    if(response.status == 'ok') {
+                        document.getElementById('comment-' + commentId).remove();
+                    }
+                });
+            }
+        });
+    });
+</script>
+{% endblock %}

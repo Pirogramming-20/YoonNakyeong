@@ -1,0 +1,22 @@
+.photo {
+    width: 200px;
+    height: 200px;
+}
+.content {
+    border: solid 1px;
+    padding: 10px;
+    margin: 1px;
+}
+.container {
+    display: flex;
+}
+.btn {
+    padding: 5px;
+    cursor: pointer;
+}
+.box {
+    margin: 8px;
+}
+.comment-form {
+    margin-top: 16px;
+}
